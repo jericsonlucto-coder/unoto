@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useUnoGame } from '@/hooks/useUnoGame';
-import { Card } from '@/types/uno';
+import { Card } from '@/tipo/uno';
 import ColorPicker from './ColorPicker';
 import EndOfRound from './EndOfRound';
 import EndOfGame from './EndOfGame';
