@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useUnoGame } from '@/hooks/useUnoGame';
-import { Card } from '@/tipo/uno';
+import { Card } from '@/types/uno';
 import ColorPicker from './ColorPicker';
 import EndOfRound from './EndOfRound';
 import EndOfGame from './EndOfGame';
@@ -33,7 +33,7 @@ export default function Game() {
       {/* CPU Section */}
       <div className="mb-8">
         <div className="flex justify-center gap-2 flex-wrap mb-2">
-          {gameState.cpuHand.map((_, idx) => (
+          {gameState.cpuHand.map((_card: Card, idx: number) => (
             <div key={idx} className="w-24 h-32 relative">
               <Image
                 src="/images/back.png"
@@ -92,7 +92,7 @@ export default function Game() {
       {/* Player Section */}
       <div className="mt-8">
         <div className="flex justify-center gap-2 flex-wrap">
-          {gameState.playerHand.map((card, idx) => (
+          {gameState.playerHand.map((card: Card, idx: number) => (
             <div
               key={idx}
               onClick={() => handlePlayerPlay(idx, card)}
@@ -118,7 +118,7 @@ export default function Game() {
 
       {/* Modals */}
       {gameState.colorPickerIsOpen && (
-        <ColorPicker onSelectColor={(color) => {
+        <ColorPicker onSelectColor={(color: string) => {
           setSelectedColor(color);
           playSound('colorButton');
         }} />
