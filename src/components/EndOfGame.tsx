@@ -1,6 +1,6 @@
 'use client';
 
-import { Player } from '@/types/uno';
+import { Player } from '@/tipo/uno';
 
 interface EndOfGameProps {
   winner: Player;
