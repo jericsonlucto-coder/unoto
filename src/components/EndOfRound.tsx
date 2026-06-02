@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
-import { Player } from '@/types/uno';
+import { Player } from '@/tipo/uno';
 
 interface EndOfRoundProps {
   winner: Player;
